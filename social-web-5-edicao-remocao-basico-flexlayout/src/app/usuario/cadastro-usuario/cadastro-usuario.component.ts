@@ -20,7 +20,9 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   inserirUsuario(): void {
-    this.usuarioService.inserir(this.usuario);
+    this.usuarioService.inserir(this.usuario).subscribe(
+      usuario=>console.log(usuario)
+    );
     this.usuario=new Usuario();
   }
 

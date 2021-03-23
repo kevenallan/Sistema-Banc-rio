@@ -12,10 +12,12 @@ export class ListagemUsuarioComponent implements OnInit {
   usuarios: Array<Usuario>;
 
   constructor(private usuarioService:UsuarioService) {
-    this.usuarios=this.usuarioService.listar();
   }
 
   ngOnInit(): void {
+    this.usuarioService.listar().subscribe(
+      usuarios=>this.usuarios=usuarios
+    );
   }
 
   editar(usuario: Usuario): void {
