@@ -14,6 +14,7 @@ import {UsuarioModule} from './usuario/usuario.module';
 import {LayoutModule} from './layout/layout.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     UsuarioModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
