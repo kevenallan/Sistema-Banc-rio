@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { Usuario } from '../model/usuario';
 
@@ -10,7 +11,7 @@ import { Usuario } from '../model/usuario';
 export class UsuarioService {
   URL_USUARIOS='http://localhost:3000/usuarios';
 
-  constructor(private httpClient:HttpClient) { 
+  constructor(private httpClient:HttpClient, private snackBar:MatSnackBar) { 
   }
   listar(): Observable<Usuario[]>{
     return this.httpClient.get<Usuario[]>(this.URL_USUARIOS);

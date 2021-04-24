@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/shared/model/usuario';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
 
@@ -10,8 +11,8 @@ import { UsuarioService } from 'src/app/shared/services/usuario.service';
 })
 export class ListagemUsuarioTabelaComponent implements OnInit {
   usuarios:MatTableDataSource<Usuario>;
-  mostrarColunas=['id','nome','cpf','idade','acoes'];
-  constructor(private usuarioService:UsuarioService) { }
+  mostrarColunas=['id','nome','cpf','idade','telefone','acoes'];
+  constructor(private usuarioService:UsuarioService, private roteador:Router) { }
 
   ngOnInit(): void {
     this.usuarioService.listar().subscribe(
@@ -31,5 +32,8 @@ export class ListagemUsuarioTabelaComponent implements OnInit {
         }
       }
     );
+  }
+  editar(usuario: Usuario): void {
+    this.roteador.navigate(['cadastrarusuario',usuario.id])
   }
 }
