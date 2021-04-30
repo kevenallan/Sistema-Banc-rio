@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Usuario} from '../../shared/model/usuario';
-import { UsuarioService } from 'src/app/shared/services/usuario.service';
 import { Router } from '@angular/router';
+import { UsuarioFirestoreService } from 'src/app/shared/services/usuario-firestore.service';
 
 @Component({
   selector: 'app-listagem-usuario',
@@ -12,7 +12,7 @@ export class ListagemUsuarioComponent implements OnInit {
 
   usuarios: Array<Usuario>;
 
-  constructor(private usuarioService:UsuarioService, private roteador:Router) {
+  constructor(private usuarioService:UsuarioFirestoreService, private roteador:Router) {
   }
 
   ngOnInit(): void {

@@ -15,7 +15,7 @@ import {LayoutModule} from './layout/layout.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { InterceptorModule } from './interceptor/interceptor.module';
-
+import { FirestoreModule } from './firestore/firestore.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { InterceptorModule } from './interceptor/interceptor.module';
     UsuarioModule,
     HttpClientModule,
     MatSnackBarModule,
-    InterceptorModule
+    InterceptorModule,
+    FirestoreModule
 
   ],
   providers: [],
